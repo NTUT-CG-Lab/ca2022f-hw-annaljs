@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1900">
+  <title>TypeScript HTML App</title>
+  <style>
+    html, body {
+        margin: 0;
+        overflow: hidden;
+    }
+    h4, span{
+      font-size: 10px !important;
+    }
+    .Sliders{
+      position: absolute !important;
+      top: 20px;
+      left: 150px;
+      background: rgba(0,0,0,0.3);
+    }
+    .StandardSlider{
+      position: absolute !important;
+      top: 20px;
+      left: 850px;
+
+    }
+    .SpecificSlider{
+      position: absolute !important;
+      top: 300px;
+      left: 850px;
+
+    }
+    .manualInput{
+    outline-style: none ;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 20px;
+    }
+
+  </style>
+  <!-- Pollyfill script -->
+  <script src="https://unpkg.com/core-js-bundle@3.6.1/minified.js"></script>
+  <!-- Live2DCubismCore script -->
+  <script src = "../../../Core/live2dcubismcore.js"></script>
+  <!-- Build script -->
+  <script src = "./dist/bundle.js"></script>
+</head>
+<body>
+  <div class="Sliders">
+    <div class="col">
+      <div id="div ParamAngleX" style="border-width:1px; border-style:solid;">
+        <h4>ParamAngleX</h4>
+        <span>-30</span>
+        <input id="ParamAngleX" type="range" step="0.1" min="-30" max="30" value="0" >
+        <span>30</span>
+      </div>
+
+      <div id="div ParamAngleY" style="border-width:1px; border-style:solid;">
+        <h4>ParamAngleY</h4>
+        <span>-30</span>
+        <input id="ParamAngleY" type="range" step="0.1" min="-30" max="30" value="0" >
+        <span>30</span>
+      </div>
+
+      <div id="div ParamAngleZ" style="border-width:1px; border-style:solid;">
+        <h4>ParamAngleZ</h4>
+        <span>-30</span>
+        <input id="ParamAngleZ" type="range" step="0.1" min="-30" max="30" value="0" >
+        <span>30</span>
+      </div>
+
+      <div id="div ParamBrowLY" style="border-width:1px; border-style:solid;">
+        <h4>ParamBrowLY</h4>
+        <span>-1</span>
+        <input id="ParamBrowLY" type="range" step="0.1" min="-1" max="1" value="0" >
+        <span>1</span>
+      </div>
+
+      <div id="div ParamBrowRY" style="border-width:1px; border-style:solid;">
+        <h4>ParamBrowRY</h4>
+        <span>-1</span>
+        <input id="ParamBrowRY" type="range" step="0.1" min="-1" max="1" value="0" >
+        <span>1</span>
+      </div>
+
+      <div id="div ParamBrowLX" style="border-width:1px; border-style:solid;">
+        <h4>ParamBrowLX</h4>
+        <span>-1</span>
+        <input id="ParamBrowLX" type="range" step="0.1" min="-1" max="1" value="0" >
+        <span>1</span>
+      </div>
+
+      <div id="div ParamBrowRX" style="border-width:1px; border-style:solid;">
+        <h4>ParamBrowRX</h4>
+        <span>-1</span>
+        <input id="ParamBrowRX" type="range" step="0.1" min="-1" max="1" value="0" >
+        <span>1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="StandardSlider">
+    <h4>標準參數</h4>
+
+    <div id="standard param" style="border-width:1px; border-style:solid;">
+
+      <h4 id="paramName"></h4>
+      <span><input class="manualInput" id="minValue"  value="0" ></span>
+      <input id="paramValue" type="range" step="0.1" min="0" max="1" value="0" >
+      <span><input class="manualInput" id="maxValue"  value="1" ></span>
+
+    </div>
+
+    <select name="Parameter" id="paramlist">
+      <option value="ParamAngleX">ParamAngleX</option>
+      <option value="ParamAngleY">ParamAngleY</option>
+      <option value="ParamAngleZ">ParamAngleZ</option>
+      <option value="ParamEyeLOpen">ParamEyeLOpen</option>
+      <option value="ParamEyeLSmile">ParamEyeLSmile</option>
+      <option value="ParamEyeROpen">ParamEyeROpen</option>
+      <option value="ParamEyeRSmile">ParamEyeRSmile</option>
+      <option value="ParamEyeBallX">ParamEyeBallX</option>
+      <option value="ParamEyeBallY">ParamEyeBallY</option>
+      <option value="ParamEyeBallForm">ParamEyeBallForm</option>
+      <option value="ParamBrowLY">ParamBrowLY</option>
+      <option value="ParamBrowRY">ParamBrowRY</option>
+      <option value="ParamBrowLX">ParamBrowLX</option>
+      <option value="ParamBrowRX">ParamBrowRX</option>
+      <option value="ParamBrowLAngle">ParamBrowLAngle</option>
+      <option value="ParamBrowRAngle">ParamBrowRAngle</option>
+      <option value="ParamBrowLForm">ParamBrowLForm</option>
+      <option value="ParamBrowRForm">ParamBrowRForm</option>
+      <option value="ParamMouthForm">ParamMouthForm</option>
+      <option value="ParamMouthOpenY">ParamMouthOpenY</option>
+      <option value="ParamCheek">ParamCheek</option>
+      <option value="ParamBodyAngleX">ParamBodyAngleX</option>
+      <option value="ParamBodyAngleY">ParamBodyAngleY</option>
+      <option value="ParamBodyAngleZ">ParamBodyAngleZ</option>
+      <option value="ParamBreath">ParamBreath</option>
+      <option value="ParamArmLA">ParamArmLA</option>
+      <option value="ParamArmRA">ParamArmRA</option>
+      <option value="ParamArmLB">ParamArmLB</option>
+      <option value="ParamArmRB">ParamArmRB</option>
+      <option value="ParamHandL">ParamHandL</option>
+      <option value="ParamHandR">ParamHandR</option>
+      <option value="ParamHairFront">ParamHairFront</option>
+      <option value="ParamHairSide">ParamHairSide</option>
+      <option value="ParamHairBack">ParamHairBack</option>
+      <option value="ParamHairFluffy">ParamHairFluffy</option>
+      <option value="ParamShoulderY">ParamShoulderY</option>
+      <option value="ParamBustX">ParamBustX</option>
+      <option value="ParamBustY">ParamBustY</option>
+      <option value="ParamBaseX">ParamBaseX</option>
+      <option value="ParamBaseY">ParamBaseY</option>
+
+    </select>
+
+
+ </div>
+
+ <div class="SpecificSlider">
+  <h4>特定參數</h4>
+
+  <div id="specific param" style="border-width:1px; border-style:solid;">
+
+    <h4 id="specific paramName"></h4>
+    <span><input class="manualInput" id="specific minValue"  value="0" ></span>
+    <input id="specific paramValue" type="range" step="0.1" min="0" max="1" value="0" >
+    <span><input class="manualInput" id="specific maxValue"  value="1" ></span>
+
+  </div>
+
+  <select name="Parameter" id="specific paramlist">
+    <option value="ParamTere">ParamTere</option>
+    <option value="ParamFaceForm">ParamFaceForm</option>
+    <option value="ParamEyeForm">ParamEyeForm</option>
+    <option value="ParamTear">ParamTear</option>
+    <option value="ParamScarf">ParamScarf</option>
+    <option value="ParamBodyUpper">ParamBodyUpper</option>
+    <option value="ParamHandChangeR">ParamHandChangeR</option>
+    <option value="ParamHandAngleR">ParamHandAngleR</option>
+    <option value="ParamHandDhangeL">ParamHandDhangeL</option>
+    <option value="ParamHandAngleL">ParamHandAngleL</option>
+  </select>
+
+
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
